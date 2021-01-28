@@ -44,26 +44,26 @@ export default function Output() {
     );
   };
       
-      `
+`;
 
   return (
     <Resizable
-  defaultSize={{
-  width: 325,
-  height: 700
-  }}
->
-    <ScrollToBottom>
-    <div className = 'output'>
-      <CopyBlock 
-        text={parse}
-        showLineNumbers={true}
-        codeBlock
-        language="typescript"
-        theme={dracula}
-      />
-    </div>
-    </ScrollToBottom>
+      defaultSize={{
+      width: 325,
+      height: 700
+      }}
+    >
+      <ScrollToBottom>
+        <div className = 'output'>
+          <CopyBlock 
+            text={parse}
+            showLineNumbers={true}
+            codeBlock
+            language="typescript"
+            theme={dracula}
+          />
+        </div>
+      </ScrollToBottom>
     </Resizable>
   );
 }
