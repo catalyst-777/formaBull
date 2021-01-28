@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { useDrop } from 'react-dnd';
-import { Droppable } from 'react-beautiful-dnd';
 import { Box } from '@material-ui/core';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { ItemTypes } from '../utils/items';
@@ -58,7 +57,6 @@ export const MainCanvas = (props:any) => {
   const isActive = canDrop && isOver;
 
   return (
-    <Droppable dropppableID=>
     <div 
     //attaches the drop ref to the MainCanvas
     ref={drop}
@@ -85,6 +83,5 @@ export const MainCanvas = (props:any) => {
       }
     {props.children}
     </div>
-    </Droppable>
   )
 }

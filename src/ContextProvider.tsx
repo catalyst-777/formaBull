@@ -18,8 +18,7 @@ export const ContextProvider = ({ children }: any) => {
     setListOfDroppedElements((oldArr):any => [...oldArr, clonedArr[0]])
 
     // console.log(listOfDraggableElements);
-    console.log('Dropped Elements Array: ',listOfDroppedElements);
-
+    
     // setListOfDroppedElements(listOfDroppedElements.filter((draggableElement, i) => draggableElement.id !== id).concat(clonedArr[0]));
 };
 
