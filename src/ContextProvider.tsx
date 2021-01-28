@@ -48,7 +48,7 @@ export const ContextProvider = ({ children }: any) => {
 
   //create a function that will make a clone of object(from listofDraggableElements) being dragged
     //u
-  //return or pace that clone in our listOfDroppedElements
+  //return or place that clone in our listOfDroppedElements
 
     const [listOfDraggableElements, setListOfDraggableElements] = useState([
         {
