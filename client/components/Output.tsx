@@ -8,7 +8,7 @@ import { Resizable } from 're-resizable';
 // import ContextProvider from '../../src/ContextProvider';
 import ContextProvider from '../containers/ContextProvider';
 
-export default function Output() {
+export default function Output() { 
   const state = useContext(ContextProvider);
   console.log(state); // an array of the components
 

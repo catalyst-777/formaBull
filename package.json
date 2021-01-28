@@ -31,7 +31,6 @@
     "@material-ui/icons": "^4.11.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "bootstrap": "^4.6.0",
     "fontsource-roboto": "^4.0.0",
     "jsx-to-string": "^1.4.0",
     "pretty-format": "^26.6.2",
