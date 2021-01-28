@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { useDrop } from 'react-dnd';
-import { Box } from '@material-ui/core'
+import { Droppable } from 'react-beautiful-dnd';
+import { Box } from '@material-ui/core';
 import { createStyles, Theme, makeStyles } from '@material-ui/core/styles';
 import { ItemTypes } from '../utils/items';
 import { CardCreator } from './CardCreator';
-import { AppContext } from '../../src/'
+import { AppContext } from '../../src/';
 
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -57,6 +58,7 @@ export const MainCanvas = (props:any) => {
   const isActive = canDrop && isOver;
 
   return (
+    <Droppable dropppableID=>
     <div 
     //attaches the drop ref to the MainCanvas
     ref={drop}
@@ -67,6 +69,7 @@ export const MainCanvas = (props:any) => {
         <Box>
 
         </Box>
+     
       </div>
       {listOfDroppedElements
         // .filter((draggableElement: any, i: any) => draggableElement.status === 'dropped')
@@ -82,5 +85,6 @@ export const MainCanvas = (props:any) => {
       }
     {props.children}
     </div>
+    </Droppable>
   )
 }

@@ -17,8 +17,9 @@ export const ContextProvider = ({ children }: any) => {
     // Push method for React hooks, you can't use .push() method when using hooks.
     setListOfDroppedElements((oldArr):any => [...oldArr, clonedArr[0]])
 
-    console.log(listOfDraggableElements);
-  
+    // console.log(listOfDraggableElements);
+    console.log('Dropped Elements Array: ',listOfDroppedElements);
+
     // setListOfDroppedElements(listOfDroppedElements.filter((draggableElement, i) => draggableElement.id !== id).concat(clonedArr[0]));
 };
 

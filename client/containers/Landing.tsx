@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { LeftSideBar } from '../components/LeftSideBar';
 import { RightSideBar } from '../components/RightSideBar';
 import { MainCanvas } from '../components/MainCanvas';
