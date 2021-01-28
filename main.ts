@@ -1,4 +1,3 @@
-// JS way, destructure
 const { app, BrowserWindow } = require('electron');
 
 
@@ -12,9 +11,7 @@ app.on('ready', () => {
       // contextIsolation: true, THIS HAS CONFLICT WITH TYPESCRIPT
       webSecurity: false,
     }
-    });
-
-
+  });
   
   // hide the default menu bar that comes with the browser window
   window.setMenuBarVisibility(false); //NOTE changed from null to false
