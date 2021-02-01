@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { makeStyles, withStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Tabs, Tab, Box, Typography } from '@material-ui/core';
-import { AppContext } from '../../src/'
-import { CardCreator } from './CardCreator';
+import { Tabs, Tab, Box, Typography, Container } from '@material-ui/core';
+import { AddTab } from '../components/AddTab'
+import { EditTab } from '../components/EditTab'
+import { StyleTab } from '../components/StyleTab'
 
 
 interface StyledTabsProps {
@@ -28,6 +29,7 @@ const StyledTabs = withStyles({
 
 interface StyledTabProps {
   label: string;
+  index: number;
 }
 
 
@@ -57,6 +59,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   padding: {
     padding: theme.spacing(1),
   },
+  containerPadding: {
+    padding: '3px'
+  },
   backgroundColor: {
     backgroundColor: '#F94EB4',
   },
@@ -66,44 +71,67 @@ const useStyles = makeStyles((theme: Theme) => ({
 export const LeftSideBar = (props:any) => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const { listOfDraggableElements }: any = useContext(AppContext);
-
-  const output = <div> Hello </div>
   
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
 
-  // console.log(listOfDraggableElements[0].id)
+  // TS interface for TabPanel function Props
+  interface TabPanelProps {
+    children?: React.ReactNode;
+    index: any;
+    value: any;
+  }
+  
+  // Differentiate content on each individual tab
+  function TabPanel(props: TabPanelProps) {
+    const { children, value, index, ...other } = props;
+  
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`simple-tabpanel-${index}`}
+        aria-labelledby={`simple-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+        <Container className={classes.containerPadding}>
+          <Box >
+            {children}
+          </Box>
+        </Container>
+        )}
+      </div>
+    );
+  }
+   
 
   return (
     <div className={classes.root}>
       <div className={classes.backgroundColor}>
         <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs example">
-          <StyledTab label="Edit" />
-          <StyledTab label="Add">
-            <CardCreator />
-          </StyledTab>
-          <StyledTab label="Style" />
+          <StyledTab label="Edit" index={0} />
+          <StyledTab label="Add" index={1} />
+          <StyledTab label="Style" index={2} />
         </StyledTabs>
         <Typography className={classes.padding} />
       </div>
       <div>
-        <Box bgcolor='yellow' height='auto' width='100px'>
-          {listOfDraggableElements
-            // .filter((draggableElement: any, i: any) => draggableElement.status === 'not-dropped')
-            .map((draggableElement: any, i: any) => (
-              <CardCreator
-              //took out draggableElement.id.toString()
-                key={(Math.random() * 1000) << 0}
-                id={draggableElement.id}
-                category={draggableElement.category}
-                title={draggableElement.title}
-              />
-            ))
-          }
-        </Box>
-    </div>
+        <TabPanel value={value} index={0}>
+          <EditTab />
+        </TabPanel>
+      </div>
+      <div>
+        <TabPanel value={value} index={1}>
+          <AddTab />
+        </TabPanel>
+      </div>
+      <div>
+        <TabPanel value={value} index={2}>
+         <StyleTab /> 
+        </TabPanel>
+      </div>
     </div>
   );
 }
