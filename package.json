@@ -12,6 +12,10 @@
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
+  "jest": {
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "setupFiles": ["./__tests__/setupTests.js"]
+  },
   "author": "",
   "license": "MIT",
   "build": {
@@ -54,13 +58,18 @@
     "@babel/preset-typescript": "^7.12.7",
     "@types/electron-devtools-installer": "^2.2.0",
     "@types/react-router-dom": "^5.1.7",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "electron": "^11.2.0",
     "electron-builder": "^22.9.1",
     "electron-devtools-installer": "^3.1.1",
     "electron-react-devtools": "^0.5.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "enzyme-to-json": "^3.6.1",
     "html-webpack-plugin": "^4.5.1",
+    "jest": "^26.6.3",
     "sass": "^1.32.4",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
