@@ -270,7 +270,8 @@ ComponentLinkedList.prototype.remove = function (val) {
         setTheme
     };
 
-console.log('LIST OF DRAGGABLES', listOfDraggableElements);
+// console.log('LIST OF DRAGGABLES', listOfDraggableElements);
+console.log('LIST OF dropped', listOfDroppedElements);
 
     return (
         // Global Store being passed as value
