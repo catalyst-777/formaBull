@@ -13,8 +13,12 @@
     "dist": "electron-builder"
   },
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "setupFiles": ["./__tests__/setupTests.js"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./__tests__/setupTests.js"
+    ]
   },
   "author": "",
   "license": "MIT",
