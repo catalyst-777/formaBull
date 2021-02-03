@@ -63,7 +63,7 @@ import { useForm } from "react-hook-form";
             customStyle={{
               overflowY: 'scroll',
               minWidth: '360',
-              maxHeight: '715'   
+              maxHeight: '765'    
             }}
           />
         </div>

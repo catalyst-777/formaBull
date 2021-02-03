@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
     border: 0,
     borderRadius: 3,
     color: 'black',
-    height: '89%',
+    height: '110%',
     width: 'auto',
     marginLeft: '50px',
     marginRight: '50px',
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
     padding: '0 30px',
     textAlign: 'center',
     overflowY: 'scroll',
-    minWidth: 400
+    key: () => 'createstyles' + Math.floor(Math.random()*100000)
     },
   })
 );
@@ -60,7 +60,7 @@ export const MainCanvas = (props:any) => {
   //function needs to take in a linked list, and iterate/traverse list, while rendering the value of each node with the anonymous function
   const droppedLinkedList = (linkedList) => {
     const createDroppedItem = (draggableElement: any, i: any) => (
-      <div key={'dropped'+ Math.floor(Math.random()*100000)} style={{ width: '500px', margin: 'auto'}} >
+      <div key={'dropped'+Math.floor(Math.random()*100000)} style={{ width: '500px', margin: 'auto'}} >
         <CardCreator 
         id={draggableElement.id}
         category={draggableElement.category}
