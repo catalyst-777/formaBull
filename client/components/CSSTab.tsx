@@ -111,7 +111,6 @@ const selectedTheme = galleryOfThemes[theme];
               minWidth: '359',
 =======
               minWidth: '360',
->>>>>>> 818d3a508a5190fede14cc4e5fc38340d836a1cf
               maxHeight: '715'
             }}
           />
